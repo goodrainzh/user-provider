@@ -14,13 +14,29 @@
 	<groupId>com.goodrain</groupId>
 	<artifactId>demo.user.provider</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo.vote.provider</name>
-	<url>http://maven.apache.org</url>
+	<name>demo.user.provider</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>				
 	</properties>
 	
+	<repositories>
+		<repository>
+			<id>libs-release-local</id>
+			<url>http://10.211.55.10:8081/artifactory/goodrain/</url>
+		</repository>
+
+		<repository>
+			<id>ali-repo</id>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+		</repository>
+
+		<repository>
+			<id>goodrain-repo</id>
+			<url>http://10.0.1.11:8081/artifactory/libs-release/</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -86,4 +102,31 @@
 			<artifactId>log4j</artifactId>			
 		</dependency>
 	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+	<!-- <build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>3.0.2</version>
+      <configuration>
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <classpathPrefix>/root/.m2/repository/</classpathPrefix>
+			<classpathLayoutType>repository</classpathLayoutType>
+            <mainClass>com.goodrain.demo.user.provider.launch.Launch</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+    </plugin>
+  </plugins>
+</build> -->
 </project>
