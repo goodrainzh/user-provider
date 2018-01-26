@@ -18,6 +18,5 @@
 	<dubbo:protocol name="dubbo" port="28018" host="localhost" />
 
 	<!-- 用户服务 -->
-	<dubbo:service interface="com.goodrain.demo.vote.service.UserService"
-		ref="userService" />
+	<dubbo:service interface="com.goodrain.demo.vote.service.UserService" ref="userService" />
 </beans>  
